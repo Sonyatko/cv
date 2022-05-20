@@ -1,1 +1,1 @@
-#  https://Sonyatko.github.io/cv/cv
+#  https://Sonyatko.github.io/cv/cv.md
