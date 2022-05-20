@@ -2,7 +2,7 @@ Makeenko Sofia
 #
 *Student*
 
-![my photo](https://github.com/Sonyatko/cv/blob/markdown-cv/photo.jpg)
+![my photo](https://github.com/Sonyatko/cv/blob/main/photo.jpg)
 #
 Contact information:
 
