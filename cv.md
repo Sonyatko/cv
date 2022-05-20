@@ -32,7 +32,7 @@ Skills:
 * GitHub
 #
 Code example:
-bsl
+```bsl
 class triangle {
 protected:
   double a,b,h;
@@ -71,7 +71,7 @@ int main() {
   system("pause");
   return 0;
 }
-
+```
 #
 Languages:
 
@@ -81,4 +81,4 @@ Languages:
 
 - English
 #
-*Follow my work on GitHub* *https://github.com/tatyanaigorevna18 
+Follow my work on GitHub https://github.com/Sonyatko
