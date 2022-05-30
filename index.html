@@ -60,6 +60,105 @@
             <h3>Code</h3>
             <pre class="pre">
                 <code>
+                    template <typename T>
+                    class Matrix {
+                    private:
+                      int n;
+                      int m;
+                      T** a;
+                    public:
+                      Matrix(int n, int m) {
+                        this->n = n;
+                        this->m = m;
+                        this->a = new T*[n];
+                        for (int i = 0; i < n; i++) {
+                          a[i] = new T[m];
+                        }
+                      }
+                      Matrix(const Matrix& matrixToCopy) {
+                        this->n = matrixToCopy.n;
+                        this->m = matrixToCopy.m;
+                        this->a = new T[matrixToCopy.n];
+                        for (int i = 0; i < matrixToCopy.n; i++) {
+                          this->a[i] = new T[matrixToCopy.m];
+                        }
+                      }
+                      ~Matrix() {
+                        delete[]a;
+                      }
+                      friend ostream& operator<<(ostream& output, const Matrix& obj) {
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            output << obj.a[i][j] << " ";
+                          }
+                          cout << endl;
+                        }
+                        output << endl;
+                        return output;
+                      }
+                      friend istream& operator>>(istream& input, Matrix& obj) {
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            input >> obj.a[i][j];
+                          }
+                        }
+                        return input;
+                      }
+                      void set() {
+                        cout << "Введите матрицу:" << endl;
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            cin >> a[i][j];
+                          }
+                        }
+                      }
+                      T Srznach() {
+                        T summ = 0;
+                        int counter = 0;
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            summ += a[i][j];
+                            counter++;
+                          }
+                        }
+                        return (summ / counter);
+                      }
+                      T maxi() {
+                        T max = 0;
+                        max = a[0][0];
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            if (a[i][j] > max) {
+                              max = a[i][j];
+                            }
+                          }
+                        }
+                        return max;
+                      }
+                      T mini() {
+                        T min;
+                        min = a[0][0];
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            if (a[i][j] < min ) {
+                              min = a[i][j];
+                            }
+                          }
+                        }
+                        return min;
+                      }
+                    }
+                  </code>
+            </pre>  
+          </section>
+          <section class="section section-courses" id="Courses">
+            <h2>Corses</h2>
+
+              <ul>
+                  <li>HTML and CSS course on <a href="https://stepik.org/course/38218/syllabus?auth=login" title="stepik.org">(in progress)</a></li>
+                  <li>C++ course on <a href="https://stepik.org/course/363/syllabus" title="stepik.org">(almost done)</a></li>
+          </section> 
+      </div>                
     </main>
 </body>
 </html>
