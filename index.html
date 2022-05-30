@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">  
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class = "header">
+        <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+              <li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li>
+              <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+              <li class="nav-item"><a href="#code" class="nav-link">Code</a></li>
+              <li class="nav-item"><a href="#courses" class="nav-link">Courses</a></li>
+            </ul>
+          </nav>
+        <div>
+            
+        </div>
+    </header>
+    <main class = "main">
+      <div class=" container main">
+          <section class="sections" id="profile">
+       <div class ="section-profile-t">
+         <h1 class="section-name">Sony Makeenko</h1>
+       </div>
+          </section>
+        </div>
+        <section class="section" id="contacts">
+          <h3 class="section-contacts">Contacts</h3>
+          <ul class="section-list">
+              <li class="section-item contacts-item">Vitebsk, Belarus</li>
+              <li class="section-item contacts-item">Email: <a href="mailto:sonya.makeenko@gmail.com" title="email">sonya.makeenko@gmail.com</a></li>
+              <li class="section-item contacts-item">Github: <a href="https://github.com/Sonyatko" title="github">Sonyatko</a></li>
+              <li class="section-item contacts-item">Telegram: <a href="https://t.me/makenka_s" title="Telegram">@makenka_s</a></li>
+            </ul>
+          </section>
+          <h2>Summary</h2>
+          <section class="section section-summary"id="Summary">
+             <h4>I study at the Masherov VSU with a degree in Information Resource Management. The C++ programming language being studied. Basic knowledge of the language and its syntax.
+              I am interested in managment. I spend my free time sleeping (because I get tired).
+              I hope to start developing games as a team in the future.</h4> 
+          </section>
+          <section class="section section-skills" id="skills">
+            <h3>Skills</h3>
+            <br>
+            <ul class ="section-code">
+              <li class="section-item skills-item">C++</li>    
+              <li class="section-item skills-item">Microsoft Excel</li>    
+              <li class="section-item skills-item">Microsoft Word</li>
+            </ul>
+          </section>
+          <section class="section section-code" id="code">
+            <h3>Code</h3>
+            <pre class="pre">
+                <code>
+                    template <typename T>
+                    class Matrix {
+                    private:
+                      int n;
+                      int m;
+                      T** a;
+                    public:
+                      Matrix(int n, int m) {
+                        this->n = n;
+                        this->m = m;
+                        this->a = new T*[n];
+                        for (int i = 0; i < n; i++) {
+                          a[i] = new T[m];
+                        }
+                      }
+                      Matrix(const Matrix& matrixToCopy) {
+                        this->n = matrixToCopy.n;
+                        this->m = matrixToCopy.m;
+                        this->a = new T[matrixToCopy.n];
+                        for (int i = 0; i < matrixToCopy.n; i++) {
+                          this->a[i] = new T[matrixToCopy.m];
+                        }
+                      }
+                      ~Matrix() {
+                        delete[]a;
+                      }
+                      friend ostream& operator<<(ostream& output, const Matrix& obj) {
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            output << obj.a[i][j] << " ";
+                          }
+                          cout << endl;
+                        }
+                        output << endl;
+                        return output;
+                      }
+                      friend istream& operator>>(istream& input, Matrix& obj) {
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            input >> obj.a[i][j];
+                          }
+                        }
+                        return input;
+                      }
+                      void set() {
+                        cout << "Введите матрицу:" << endl;
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            cin >> a[i][j];
+                          }
+                        }
+                      }
+                      T Srznach() {
+                        T summ = 0;
+                        int counter = 0;
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            summ += a[i][j];
+                            counter++;
+                          }
+                        }
+                        return (summ / counter);
+                      }
+                      T maxi() {
+                        T max = 0;
+                        max = a[0][0];
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            if (a[i][j] > max) {
+                              max = a[i][j];
+                            }
+                          }
+                        }
+                        return max;
+                      }
+                      T mini() {
+                        T min;
+                        min = a[0][0];
+                        for (int i = 0; i < n; i++) {
+                          for (int j = 0; j < m; j++) {
+                            if (a[i][j] < min ) {
+                              min = a[i][j];
+                            }
+                          }
+                        }
+                        return min;
+                      }
+                    }
+                  </code>
+            </pre>  
+          </section>
+          <section class="section section-courses" id="Courses">
+            <h2>Corses</h2>
+
+              <ul>
+                  <li>HTML and CSS course on <a href="https://stepik.org/course/38218/syllabus?auth=login" title="stepik.org">(in progress)</a></li>
+                  <li>C++ course on <a href="https://stepik.org/course/363/syllabus" title="stepik.org">(almost done)</a></li>
+          </section> 
+      </div>                
+    </main>
+</body>
+</html>
